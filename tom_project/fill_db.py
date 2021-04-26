@@ -4,7 +4,10 @@
 
 from decimal import Decimal
 
-from calculator.models import Discount, Tax
+from calculator.models import (
+    Discount,
+    Tax,
+)
 
 
 discounts = {

@@ -2,7 +2,10 @@ from decimal import Decimal
 from typing import Optional
 
 from calculator.exceptions import StateNotFound
-from calculator.models import Tax, Discount
+from calculator.models import (
+    Discount,
+    Tax,
+)
 
 
 class Repository:
