@@ -24,6 +24,7 @@ taxes = {
 
 
 def fill_db():
+    """Заполнение базы дефолтными значениями."""
     discount_objects = []
     for cost, discount in discounts.items():
         discount_objects.append(

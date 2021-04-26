@@ -7,6 +7,7 @@ from calculator.repository import Repository
 
 
 def calculator_view(request):
+    """Работа со страницей калькулятора."""
     # Обработка пост запроса с параметрами
     if request.method == 'POST':
         form = CalculatorForm(request.POST)

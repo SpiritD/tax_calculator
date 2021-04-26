@@ -24,7 +24,7 @@ class RepositoryTestCase(TestCase):
             (Decimal(5467), Decimal('5')),
             (Decimal(20000), Decimal('10')),
             (Decimal(200000000), Decimal('15')),
-        ]
+        ],
     )
     def test_get_discount_for_cost(self, cost, expected):
         """Тесты для get_discount_for_cost."""
@@ -41,9 +41,9 @@ class RepositoryTestCase(TestCase):
             ('TX', Decimal('6.25')),
             ('AL', Decimal('4')),
             ('CA', Decimal('8.25')),
-        ]
+        ],
     )
-    def test_get_discount_for_cost(self, state_code, expected):
+    def test_get_tax_by_state(self, state_code, expected):
         """Тесты для get_tax_by_state."""
         repository = Repository()
         self.assertEqual(
@@ -55,4 +55,4 @@ class RepositoryTestCase(TestCase):
         """Тесты для get_tax_by_state, если нет штата."""
         repository = Repository()
         with self.assertRaises(StateNotFound):
-            repository.get_tax_by_state(state_code='QQ'),
+            repository.get_tax_by_state(state_code='QQ')

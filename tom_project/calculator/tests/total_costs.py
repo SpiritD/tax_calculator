@@ -23,9 +23,10 @@ class CalculateTotalCostTestCase(TestCase):
             (Decimal(1), 1000, 'TX', Decimal('1030.625')),
             (Decimal(200), 100, 'AL', Decimal('18720')),
             (Decimal('123.33'), 175, 'CA', Decimal('21026.9941875')),
-        ]
+        ],
     )
     def test_calculate_total_cost(self, price, quantity, state_code, expected):
+        """Проверка успешных расчётов calculate_total_cost."""
         repository = Repository()
         self.assertEqual(
             calculate_total_cost(
