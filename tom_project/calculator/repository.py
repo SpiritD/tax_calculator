@@ -11,7 +11,7 @@ from calculator.models import (
 class Repository:
     """Методы для работы с базой."""
 
-    def get_tax_by_state(self, state_code: int) -> Decimal:
+    def get_tax_by_state(self, state_code: str) -> Decimal:
         """
         Получение налога для штата в процентах.
 

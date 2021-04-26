@@ -51,3 +51,15 @@ docker-compose -f docker-compose.yml -f docker-compose.manage.yml up --build tes
 ```shell
 docker-compose up
 ```
+
+
+## Админка
+
+Для удобного создания или изменения значений (discount, tax) в базе нужно создать
+администратора с помощью команды
+
+```shell
+python manage.py createsuperuser
+```
+
+И зайти в админку по адресу /admin

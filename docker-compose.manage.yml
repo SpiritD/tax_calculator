@@ -20,7 +20,7 @@ services:
     build:
       context: .
       dockerfile: ./Dockerfile
-    command: "python manage.py test"
+    command: "python manage.py test calculator"
     environment:
       DJANGO_SETTINGS_MODULE: tom_project.settings
 

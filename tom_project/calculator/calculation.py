@@ -5,7 +5,7 @@ from calculator.repository import Repository
 
 def calculate_total_cost(price: Decimal,
                          quantity: int,
-                         state_code: int,
+                         state_code: str,
                          repository: Repository) -> Decimal:
     """
     Расчёт итоговой стоимости заказа.
