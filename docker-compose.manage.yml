@@ -23,3 +23,12 @@ services:
     command: "python manage.py test"
     environment:
       DJANGO_SETTINGS_MODULE: tom_project.settings
+
+  fill_db:
+    image: service:last
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    command: "python manage.py shell < fill_db.py"
+    environment:
+      DJANGO_SETTINGS_MODULE: tom_project.settings

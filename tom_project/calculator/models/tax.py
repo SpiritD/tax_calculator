@@ -4,8 +4,9 @@ from django.db import models
 class Tax(models.Model):
     """Налог по штатам."""
 
-    state_code = models.IntegerField(
+    state_code = models.CharField(
         primary_key=True,
+        max_length=5,
     )
     state_name = models.CharField(
         max_length=30,

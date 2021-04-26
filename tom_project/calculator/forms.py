@@ -9,4 +9,4 @@ class CalculatorForm(forms.Form):
         max_digits=4,
         decimal_places=2,
     )
-    state_code = forms.IntegerField(min_value=0)
+    state_code = forms.CharField(max_length=5)

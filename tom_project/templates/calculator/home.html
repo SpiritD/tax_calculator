@@ -8,7 +8,11 @@
 </form>
 
 <p>
-Total: {{ result }}
+    {% if error %}
+        Error: {{ error }}
+    {% else %}
+        Total cost: {{ total_cost }}
+    {% endif %}
 </p>
 
 {% endblock %}
