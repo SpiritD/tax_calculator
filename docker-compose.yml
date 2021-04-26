@@ -1,0 +1,24 @@
+version: '3'
+
+services:
+  service:
+    container_name: service
+    image: service:last
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    environment:
+      DJANGO_SETTINGS_MODULE: tom_project.settings
+    volumes:
+      - ./db.sqlite3:/var/db.sqlite3
+
+  nginx:
+    image: nginx
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+      - ./deploy/nginx/nginx.conf:/etc/nginx/conf.d/default.conf:ro
+      - /var/log/nginx/:/var/log/nginx/
+    depends_on:
+      - service

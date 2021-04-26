@@ -1,0 +1,25 @@
+version: '3'
+
+services:
+  makemigrations:
+    image: service:last
+    command: "python manage.py makemigrations"
+    environment:
+      DJANGO_SETTINGS_MODULE: tom_project.settings
+    volumes:
+      - ./billing:/opt/project
+
+  migrate:
+    image: service:last
+    command: "python manage.py migrate"
+    environment:
+      DJANGO_SETTINGS_MODULE: tom_project.settings
+
+  test:
+    image: service:last
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    command: "python manage.py test"
+    environment:
+      DJANGO_SETTINGS_MODULE: tom_project.settings
