@@ -1,0 +1,14 @@
+{% extends 'calculator/base.html' %}
+
+
+{% block content %}
+<form id="calculator"  method="post">{% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Calculate">
+</form>
+
+<p>
+Total: {{ result }}
+</p>
+
+{% endblock %}
