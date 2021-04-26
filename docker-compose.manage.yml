@@ -7,7 +7,7 @@ services:
     environment:
       DJANGO_SETTINGS_MODULE: tom_project.settings
     volumes:
-      - ./billing:/opt/project
+      - ./tom_project:/opt/project
 
   migrate:
     image: service:last
